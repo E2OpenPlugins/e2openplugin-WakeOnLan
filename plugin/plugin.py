@@ -12,7 +12,7 @@ def configure(session, **kwargs):
 
 def sendnow(session, **kwargs):
 	try:
-		wol.sendAll()
+		wol.sendAllWOL()
 	except Exception, ex:
 		print "[WOL] failed to send out WOL packets:", ex
 
