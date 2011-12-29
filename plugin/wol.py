@@ -1,5 +1,7 @@
 import socket
 
+WOLLIST = '/etc/enigma2/wollist'
+
 def getArpList():
 	result = []
 	arp = open('/proc/net/arp', 'r')
@@ -20,14 +22,20 @@ def sendWOL(mac):
 	s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 	s.sendto(packet, ('<broadcast>', 9))
 
+def getWOLList():
+	result = []
+	for line in open(WOLLIST, 'r'):
+		line = line.strip()
+		if line and not line.startswith('#'):
+			result.append(line)
+	return result
+
 def sendAllWOL():
-	lines = open('/etc/enigma2/wollist', 'r').readlines()
+	lines = getWOLList()
 	for repeat in range(2):
 		for mac in lines:
-			mac = mac.strip()
-			if mac:
-				try:
-					sendWOL(mac)
-				except Exception, ex:
-					print "Failed to wake '%s':" % mac, ex
+			try:
+				sendWOL(mac)
+			except Exception, ex:
+				print "Failed to wake '%s':" % mac, ex
 
