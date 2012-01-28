@@ -20,7 +20,7 @@ def sendnow(session=None, iface=None, **kwargs):
 def doneConfiguring(session, retval):
 	pass
 
-def gotRecordEvent(self, service, event):
+def gotRecordEvent(service, event):
 	if (event == enigma.iRecordableService.evStart):
 		sendnow()
 
