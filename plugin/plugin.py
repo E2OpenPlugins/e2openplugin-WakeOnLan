@@ -4,14 +4,14 @@ from Plugins.Plugin import PluginDescriptor
 import wol
 import enigma
 
-def configure(session, **kwargs):
+def configure(session, iface=None, **kwargs):
 	try:
 		import ui
 		session.openWithCallback(doneConfiguring, ui.Config)
 	except Exception, ex:
 		print "[WOL] Sorry, UI failed to start:", ex
 
-def sendnow(session=None, **kwargs):
+def sendnow(session=None, iface=None, **kwargs):
 	try:
 		wol.sendAllWOL()
 	except Exception, ex:
@@ -20,7 +20,7 @@ def sendnow(session=None, **kwargs):
 def doneConfiguring(session, retval):
 	pass
 
-def gotRecordEvent(service, event):
+def gotRecordEvent(self, service, event):
 	if (event == enigma.iRecordableService.evStart):
 		sendnow()
 
@@ -40,15 +40,20 @@ def Plugins(**kwargs):
 			fnc = autostart
 		),
 		PluginDescriptor(
-			name="Wake-On-LAN",
+			name=_("Configure Wake-On-LAN"),
 			description = description,
-			where = PluginDescriptor.WHERE_PLUGINMENU,
-			fnc = configure
+			where = PluginDescriptor.WHERE_NETWORKSETUP,
+			fnc={"ifaceSupported": lambda x: configure,
+				"menuEntryName": lambda x: _("Send Wake-on-LAN"),
+				"menuEntryDescription": lambda x: description}
 		),
 		PluginDescriptor(
-			name="Send Wake-On-LAN",
+			name=_("Send Wake-On-LAN"),
 			description = description,
-			where = PluginDescriptor.WHERE_EXTENSIONSMENU,
-			fnc = sendnow)
+			where = PluginDescriptor.WHERE_NETWORKSETUP,
+			fnc={"ifaceSupported": lambda x: sendnow,
+				"menuEntryName": lambda x: _("Send Wake-on-LAN"),
+				"menuEntryDescription": lambda x: description}
+		),
 	]
 	return result
