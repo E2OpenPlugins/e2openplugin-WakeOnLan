@@ -1,0 +1,66 @@
+# Language fr/LC translations for e package.
+# Copyright (C) 2018 THE e'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the e package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: e 2openplugin-WakeOnLan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-15 15:10+0200\n"
+"PO-Revision-Date: 2018-09-15 15:12+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+
+#: ../ui.py:59
+msgid "Add"
+msgstr "Ajouter"
+
+#: ../ui.py:56
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../plugin.py:43
+msgid "Configure Wake-On-LAN"
+msgstr "Configurer Wake-On-LAN"
+
+#: ../plugin.py:47
+msgid "Configure Wake-on-LAN"
+msgstr "Configurer Wake-On-LAN"
+
+#: ../ui.py:99
+msgid "Failed to save configuration"
+msgstr "Echec de l'enregistrement de la configuration"
+
+#: ../ui.py:57
+msgid "Ok"
+msgstr "Ok"
+
+#: ../ui.py:58
+msgid "Remove"
+msgstr "Supprimer"
+
+#: ../plugin.py:32
+msgid "Send WOL packet on PVR and recording start"
+msgstr "Envoyer le paquet WOL sur PVR et démarrer l'enregistrement"
+
+#: ../plugin.py:51
+msgid "Send Wake-On-LAN"
+msgstr "Envoyer Wake-on-LAN"
+
+#: ../plugin.py:55
+msgid "Send Wake-on-LAN"
+msgstr "Envoyer Wake-on-LAN"
+
+#: ../ui.py:60
+msgid "The list of MAC addresses above will be sent a WOL event."
+msgstr "A la liste des adresses MAC ci-dessus sera envoyé un événement WOL."
+
+#: ../ui.py:54
+msgid "Wake-On-LAN Configuration"
+msgstr "Configuration Wake-on-LAN"
