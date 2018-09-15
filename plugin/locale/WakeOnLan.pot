@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-15 15:10+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../ui.py:59
+msgid "Add"
+msgstr ""
+
+#: ../ui.py:56
+msgid "Cancel"
+msgstr ""
+
+#: ../plugin.py:43
+msgid "Configure Wake-On-LAN"
+msgstr ""
+
+#: ../plugin.py:47
+msgid "Configure Wake-on-LAN"
+msgstr ""
+
+#: ../ui.py:99
+msgid "Failed to save configuration"
+msgstr ""
+
+#: ../ui.py:57
+msgid "Ok"
+msgstr ""
+
+#: ../ui.py:58
+msgid "Remove"
+msgstr ""
+
+#: ../plugin.py:32
+msgid "Send WOL packet on PVR and recording start"
+msgstr ""
+
+#: ../plugin.py:51
+msgid "Send Wake-On-LAN"
+msgstr ""
+
+#: ../plugin.py:55
+msgid "Send Wake-on-LAN"
+msgstr ""
+
+#: ../ui.py:60
+msgid "The list of MAC addresses above will be sent a WOL event."
+msgstr ""
+
+#: ../ui.py:54
+msgid "Wake-On-LAN Configuration"
+msgstr ""
