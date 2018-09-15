@@ -44,7 +44,7 @@ def Plugins(**kwargs):
 			description = description,
 			where = PluginDescriptor.WHERE_NETWORKSETUP,
 			fnc={"ifaceSupported": lambda x: configure,
-				"menuEntryName": lambda x: _("Send Wake-on-LAN"),
+				"menuEntryName": lambda x: _("Configure Wake-on-LAN"),
 				"menuEntryDescription": lambda x: description}
 		),
 		PluginDescriptor(
