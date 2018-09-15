@@ -1,4 +1,5 @@
 from distutils.core import setup
+import setup_translate
 
 pkg = 'Extensions.WakeOnLan'
 setup (name = 'enigma2-plugin-extensions-wakeonlan',
