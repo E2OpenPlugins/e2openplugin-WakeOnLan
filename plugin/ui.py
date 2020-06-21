@@ -77,10 +77,10 @@ class Config(Screen):
 		items = [("%s\t%s" % (x[1], x[0]), x[1]) for x in wol.getArpList()]
 		self.session.openWithCallback(self.doaddDone, ChoiceBox, list = items)
 	def doaddDone(self, result):
-	        if not result or not result[1]:
-	                return
-	        mac = result[1]
-	        for i in self.menuitems:
+		if not result or not result[1]:
+			return
+		mac = result[1]
+		for i in self.menuitems:
 			if i[1] == mac:
 				return
 		self.menuitems.append(result)
