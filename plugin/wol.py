@@ -1,3 +1,4 @@
+from __future__ import print_function
 import socket
 
 WOLLIST = '/etc/enigma2/wollist'
@@ -13,7 +14,7 @@ def getArpList():
 
 # Convert "aa:bb:cc..." to binary
 def macToBin(mac):
-	return ''.join([chr(int(x,16)) for x in mac.split(':')])
+	return ''.join([chr(int(x, 16)) for x in mac.split(':')])
 
 def sendWOL(mac):
 	binmac = macToBin(mac)
@@ -36,6 +37,6 @@ def sendAllWOL():
 		for mac in lines:
 			try:
 				sendWOL(mac)
-			except Exception, ex:
-				print "Failed to wake '%s':" % mac, ex
+			except Exception as ex:
+				print("Failed to wake '%s':" % mac, ex)
 

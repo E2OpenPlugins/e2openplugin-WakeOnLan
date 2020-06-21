@@ -1,21 +1,23 @@
+from __future__ import absolute_import
+from __future__ import print_function
 import time
 import os
 from Plugins.Plugin import PluginDescriptor
-import wol
+from . import wol
 import enigma
 
 def configure(session, iface=None, **kwargs):
 	try:
-		import ui
+		from . import ui
 		session.openWithCallback(doneConfiguring, ui.Config)
-	except Exception, ex:
-		print "[WOL] Sorry, UI failed to start:", ex
+	except Exception as ex:
+		print("[WOL] Sorry, UI failed to start:", ex)
 
 def sendnow(session=None, iface=None, **kwargs):
 	try:
 		wol.sendAllWOL()
-	except Exception, ex:
-		print "[WOL] failed to send out WOL packets:", ex
+	except Exception as ex:
+		print("[WOL] failed to send out WOL packets:", ex)
 
 def doneConfiguring(session, retval):
 	pass
