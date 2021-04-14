@@ -44,4 +44,3 @@ def sendAllWOL():
 				sendWOL(mac)
 			except Exception, ex:
 				print "Failed to wake '%s':" % mac, ex
-
