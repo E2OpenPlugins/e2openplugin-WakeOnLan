@@ -2,7 +2,7 @@ from distutils.core import setup
 import setup_translate
 
 pkg = 'Extensions.WakeOnLan'
-setup (name='enigma2-plugin-extensions-wakeonlan',
+setup(name='enigma2-plugin-extensions-wakeonlan',
        version='0.1',
        description='Sends Wake-On-LAN packets when recording etc.',
        packages=[pkg],
