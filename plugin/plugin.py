@@ -35,22 +35,22 @@ def Plugins(**kwargs):
 	result = [
 		PluginDescriptor(
 			name="Wake-On-LAN",
-			description = description,
-			where = [PluginDescriptor.WHERE_SESSIONSTART],
-			fnc = autostart
+			description=description,
+			where=[PluginDescriptor.WHERE_SESSIONSTART],
+			fnc=autostart
 		),
 		PluginDescriptor(
 			name=_("Configure Wake-On-LAN"),
-			description = description,
-			where = PluginDescriptor.WHERE_NETWORKSETUP,
+			description=description,
+			where=PluginDescriptor.WHERE_NETWORKSETUP,
 			fnc={"ifaceSupported": lambda x: configure,
 				"menuEntryName": lambda x: _("Configure Wake-on-LAN"),
 				"menuEntryDescription": lambda x: description}
 		),
 		PluginDescriptor(
 			name=_("Send Wake-On-LAN"),
-			description = description,
-			where = PluginDescriptor.WHERE_NETWORKSETUP,
+			description=description,
+			where=PluginDescriptor.WHERE_NETWORKSETUP,
 			fnc={"ifaceSupported": lambda x: sendnow,
 				"menuEntryName": lambda x: _("Send Wake-on-LAN"),
 				"menuEntryDescription": lambda x: description}

@@ -48,7 +48,7 @@ class Config(Screen):
 	</widget>
 </screen>"""
 		
-	def __init__(self, session, args = 0):
+	def __init__(self, session, args=0):
 		self.session = session
 		self.skinName = "Config_WakeOnLan"
 		self.setup_title = _("Wake-On-LAN Configuration")
@@ -73,7 +73,7 @@ class Config(Screen):
 
 	def doadd(self):
 		items = [("%s\t%s" % (x[1],x[0]), x[1]) for x in wol.getArpList()]
-		self.session.openWithCallback(self.doaddDone, ChoiceBox, list = items)
+		self.session.openWithCallback(self.doaddDone, ChoiceBox, list=items)
 	def doaddDone(self, result):
 	        if not result or not result[1]:
 	                return
