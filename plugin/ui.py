@@ -9,6 +9,7 @@ from Components.MenuList import MenuList
 from Screens.ChoiceBox import ChoiceBox
 from Screens.MessageBox import MessageBox
 
+
 def getCurrentList():
 	try:
 		macs = wol.getWOLList()
@@ -25,6 +26,7 @@ def getCurrentList():
 	except Exception, ex:
 		print "[WOL] Failed to load config:", ex
 		return []
+
 
 class Config(Screen):
 	skin = """
@@ -74,6 +76,7 @@ class Config(Screen):
 	def doadd(self):
 		items = [("%s\t%s" % (x[1], x[0]), x[1]) for x in wol.getArpList()]
 		self.session.openWithCallback(self.doaddDone, ChoiceBox, list=items)
+
 	def doaddDone(self, result):
 	        if not result or not result[1]:
 	                return

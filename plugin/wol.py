@@ -2,6 +2,7 @@ import socket
 
 WOLLIST = '/etc/enigma2/wollist'
 
+
 def getArpList():
 	result = []
 	arp = open('/proc/net/arp', 'r')
@@ -12,8 +13,11 @@ def getArpList():
 	return result
 
 # Convert "aa:bb:cc..." to binary
+
+
 def macToBin(mac):
 	return ''.join([chr(int(x, 16)) for x in mac.split(':')])
+
 
 def sendWOL(mac):
 	binmac = macToBin(mac)
@@ -22,6 +26,7 @@ def sendWOL(mac):
 	s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 	s.sendto(packet, ('<broadcast>', 9))
 
+
 def getWOLList():
 	result = []
 	for line in open(WOLLIST, 'r'):
@@ -29,6 +34,7 @@ def getWOLList():
 		if line and not line.startswith('#'):
 			result.append(line)
 	return result
+
 
 def sendAllWOL():
 	lines = getWOLList()
