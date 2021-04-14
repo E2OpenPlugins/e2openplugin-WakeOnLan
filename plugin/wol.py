@@ -13,7 +13,7 @@ def getArpList():
 
 # Convert "aa:bb:cc..." to binary
 def macToBin(mac):
-	return ''.join([chr(int(x,16)) for x in mac.split(':')])
+	return ''.join([chr(int(x, 16)) for x in mac.split(':')])
 
 def sendWOL(mac):
 	binmac = macToBin(mac)

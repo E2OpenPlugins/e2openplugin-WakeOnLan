@@ -72,7 +72,7 @@ class Config(Screen):
 		self["config"] = MenuList(self.menuitems)
 
 	def doadd(self):
-		items = [("%s\t%s" % (x[1],x[0]), x[1]) for x in wol.getArpList()]
+		items = [("%s\t%s" % (x[1], x[0]), x[1]) for x in wol.getArpList()]
 		self.session.openWithCallback(self.doaddDone, ChoiceBox, list=items)
 	def doaddDone(self, result):
 	        if not result or not result[1]:
@@ -93,10 +93,10 @@ class Config(Screen):
 			for item in self.menuitems:
 				f.write('%s\n' % item[1])
 			f.close()
-			self.close(True,self.session)
+			self.close(True, self.session)
 		except Exception, ex:
 			print "[WOL] Failed to save config:", ex
 			self.session.open(MessageBox, _("Failed to save configuration") + ":\n" + str(ex), type=MessageBox.TYPE_ERROR)
 
 	def cancel(self):
-		self.close(False,self.session)
+		self.close(False, self.session)
