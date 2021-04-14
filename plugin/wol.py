@@ -17,7 +17,7 @@ def macToBin(mac):
 
 def sendWOL(mac):
 	binmac = macToBin(mac)
-	packet = '\xff'*6 + binmac * 16
+	packet = '\xff' * 6 + binmac * 16
 	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 	s.sendto(packet, ('<broadcast>', 9))
