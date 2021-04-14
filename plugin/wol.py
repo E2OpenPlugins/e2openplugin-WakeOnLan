@@ -2,6 +2,7 @@ import socket
 
 WOLLIST = '/etc/enigma2/wollist'
 
+
 def getArpList():
 	result = []
 	arp = open('/proc/net/arp', 'r')
@@ -12,15 +13,19 @@ def getArpList():
 	return result
 
 # Convert "aa:bb:cc..." to binary
+
+
 def macToBin(mac):
-	return ''.join([chr(int(x,16)) for x in mac.split(':')])
+	return ''.join([chr(int(x, 16)) for x in mac.split(':')])
+
 
 def sendWOL(mac):
 	binmac = macToBin(mac)
-	packet = '\xff'*6 + binmac * 16
+	packet = '\xff' * 6 + binmac * 16
 	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 	s.sendto(packet, ('<broadcast>', 9))
+
 
 def getWOLList():
 	result = []
@@ -30,6 +35,7 @@ def getWOLList():
 			result.append(line)
 	return result
 
+
 def sendAllWOL():
 	lines = getWOLList()
 	for repeat in range(2):
@@ -38,4 +44,3 @@ def sendAllWOL():
 				sendWOL(mac)
 			except Exception, ex:
 				print "Failed to wake '%s':" % mac, ex
-
